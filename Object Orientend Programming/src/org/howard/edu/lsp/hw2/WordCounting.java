@@ -12,7 +12,7 @@ public class WordCounting {
 		// Name: Yousef Alsaud
 		
 		//Input and Scanner
-		FileInputStream fin = new FileInputStream("src/main/resources/word.txt");
+		FileInputStream fin = new FileInputStream("src/main/resources/words.txt");
 		Scanner fileInput = new Scanner(fin);
 		
 		// ArrayList
