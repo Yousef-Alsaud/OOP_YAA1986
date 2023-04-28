@@ -1,6 +1,4 @@
 package org.howard.edu.lsp.finalexam.problem;
-import org.junit.Test;
-import static org.junit.Assert.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -30,56 +28,5 @@ public class SongsDatabase {
             }
         }
         return null;
-    }
-
-    /* The JUnit test cases */
-
-    @Test
-    public void testAddSong() {
-        SongsDatabase db = new SongsDatabase();
-        db.addSong("Rap", "Savage");
-        db.addSong("Rap", "Gin and Juice");
-        db.addSong("Jazz", "Always There");
-
-        Set<String> expectedRap = new HashSet<String>();
-        expectedRap.add("Savage");
-        expectedRap.add("Gin and Juice");
-        assertEquals(expectedRap, db.getSongs("Rap"));
-
-        Set<String> expectedJazz = new HashSet<String>();
-        expectedJazz.add("Always There");
-        assertEquals(expectedJazz, db.getSongs("Jazz"));
-    }
-
-    @Test
-    public void testGetSongs() {
-        SongsDatabase db = new SongsDatabase();
-        db.addSong("Rap", "Savage");
-        db.addSong("Rap", "Gin and Juice");
-        db.addSong("Jazz", "Always There");
-
-        Set<String> expectedRap = new HashSet<String>();
-        expectedRap.add("Savage");
-        expectedRap.add("Gin and Juice");
-        assertEquals(expectedRap, db.getSongs("Rap"));
-
-        Set<String> expectedJazz = new HashSet<String>();
-        expectedJazz.add("Always There");
-        assertEquals(expectedJazz, db.getSongs("Jazz"));
-
-        Set<String> expectedEmpty = new HashSet<String>();
-        assertEquals(expectedEmpty, db.getSongs("Pop"));
-    }
-
-    @Test
-    public void testGetGenreOfSong() {
-        SongsDatabase db = new SongsDatabase();
-        db.addSong("Rap", "Savage");
-        db.addSong("Rap", "Gin and Juice");
-        db.addSong("Jazz", "Always There");
-
-        assertEquals("Rap", db.getGenreOfSong("Savage"));
-        assertEquals("Jazz", db.getGenreOfSong("Always There"));
-        assertNull(db.getGenreOfSong("Stairway to Heaven"));
     }
 }
